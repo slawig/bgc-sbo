@@ -17,6 +17,8 @@ To clone this project with **git** run:
 
 The project consists of the Python package sbo and Python scripts in the directory SurrogateBasedOptimization to start a optimization.
 
+The Python packages util and ann are available in the repositories https://github.com/slawig/bgc-util.git and https://github.com/slawig/bgc-sbo.git.
+
 
 
 ### Python package sbo
