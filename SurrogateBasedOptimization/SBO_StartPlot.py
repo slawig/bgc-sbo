@@ -20,7 +20,7 @@ def main(optimizationId, nodes=1):
     assert type(optimizationId) is int and 0 <= optimizationId
     assert type(nodes) is int and 0 < nodes
 
-    plots = ['Costfunction', 'StepSizeNorm', 'ParameterConvergence'] #, 'AnnualCycle', 'AnnualCycleParameter', 'Surface', 'SurfaceParameter', 'SurfaceLowFidelityModel']
+    plots = ['Costfunction', 'StepSizeNorm', 'ParameterConvergence', 'AnnualCycle', 'AnnualCycleParameter', 'Surface', 'SurfaceParameter', 'SurfaceLowFidelityModel']
 
     sbo = SurrogateBasedOptimization(optimizationId, nodes=nodes)
     sbo.plot(plots=plots)

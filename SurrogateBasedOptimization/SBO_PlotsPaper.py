@@ -8,7 +8,7 @@ from plot.SurrogateBasedOptimizationPlot import SurrogateBasedOptimizationPlot
 import sbo.constants as SBO_Constants
 
 #Global variables
-PATH_FIGURE = os.path.join('/gxfs_home', 'cau', 'sunip350', 'Daten', 'Figures', 'SurrogateBasedOptimization', 'PaperDataNew')
+PATH_FIGURE = os.path.join('/gxfs_home', 'cau', 'sunip350', 'Daten', 'Figures', 'SurrogateBasedOptimization', 'PaperData')
 
 def main(optimizationIdList=[(39, 'N-DOP'), (111, 'N'), (207, 'N'), (233, 'N')], nodes=1, fontsize=9):
     """
@@ -91,16 +91,16 @@ def main(optimizationIdList=[(39, 'N-DOP'), (111, 'N'), (207, 'N'), (233, 'N')],
         sboPlot = SurrogateBasedOptimizationPlot(optimizationId, nodes=nodes, orientation='lc2', fontsize=fontsize)
 
         #Plot the cost function values
-        #plotCostfunction(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['Costfunction'])
+        plotCostfunction(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['Costfunction'])
 
         #Plot the step size norm
-        #plotStepSizeNorm(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['StepSizeNorm'])
+        plotStepSizeNorm(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['StepSizeNorm'])
 
         #Plot the parameter convergence
-        #plotParameterConvergence(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['ParameterConvergence'])
+        plotParameterConvergence(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['ParameterConvergence'])
 
         #Plot the annual cycle of the tracer concentration
-        #plotAnnualCycle(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['AnnualCycle'])
+        plotAnnualCycle(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['AnnualCycle'])
 
         #Plot the surface concentration
         plotSurface(sboPlot, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['Surface'])
@@ -110,12 +110,12 @@ def main(optimizationIdList=[(39, 'N-DOP'), (111, 'N'), (207, 'N'), (233, 'N')],
             plotSurfaceParameter(sboPlot, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['SurfaceParameter'])
         
         #Crate table of the parameter vectors
-        #tableStr = tableParametervector(sboPlot, optimizationId, metos3dModel, **kwargs[optimizationId]['parameterTable'])
-        #print('Table parameter vectors for {} with Id {}\n{}'.format(metos3dModel, optimizationId, tableStr))
+        tableStr = tableParametervector(sboPlot, optimizationId, metos3dModel, **kwargs[optimizationId]['parameterTable'])
+        print('Table parameter vectors for {} with Id {}\n{}'.format(metos3dModel, optimizationId, tableStr))
 
         #Crate the annual cylce of the tracer concentration including the low-fidelty model and surrogate
-        #if 'AnnualCycleParameter' in kwargs[optimizationId]:
-        #    plotAnnualCycleParameter(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['AnnualCycleParameter'])
+        if 'AnnualCycleParameter' in kwargs[optimizationId]:
+            plotAnnualCycleParameter(sboPlot, optimizationId, metos3dModel, fontsize=fontsize, **kwargs[optimizationId]['AnnualCycleParameter'])
 
 
 
