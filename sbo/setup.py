@@ -16,7 +16,7 @@ setuptools.setup(
     description = 'Functions for the surrogate based optimization of a marine ecosystem model',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
-    url = 'https://github.com/slawig/bgc-ann/tree/master/sbo',
+    url = 'https://github.com/slawig/bgc-sbo/tree/main/sbo',
     license='AGPL',
     packages = setuptools.find_packages(),
     classifiers=[
